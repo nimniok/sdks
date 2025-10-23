@@ -1,0 +1,1 @@
+export const HASH_METHOD: unique symbol = Symbol('Hash method key')

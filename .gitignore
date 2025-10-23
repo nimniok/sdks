@@ -28,6 +28,7 @@ __pycache__
 target
 *.class
 *.jar
+*.tsbuildinfo
 
 # Logs
 logs
@@ -53,3 +54,4 @@ temp
 
 # Documentation build
 docs/_build
+

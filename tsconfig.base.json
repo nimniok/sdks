@@ -10,10 +10,12 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
+      "@1inch/sdk-shared": ["typescript/shared/src/index.ts"],
       "@1inch/aqua-sdk": ["typescript/aqua/src/index.ts"],
       "@1inch/cross-chain-sdk": ["typescript/cross-chain/src/index.ts"],
       "@1inch/fusion-sdk": ["typescript/fusion/src/index.ts"],
