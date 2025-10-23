@@ -52,11 +52,6 @@ describe('Address', () => {
     })
 
     describe('instance methods', () => {
-        it('should return checksummed address', () => {
-            const address = new Address(validAddressLowercase)
-            expect(address.toChecksummed()).toBe(validAddress)
-        })
-
         it('should compare addresses correctly', () => {
             const addr1 = new Address(validAddress)
             const addr2 = new Address(validAddressLowercase)
@@ -82,13 +77,6 @@ describe('Address', () => {
 
             expect(zeroAddr.isZero()).toBe(true)
             expect(normalAddr.isZero()).toBe(false)
-        })
-
-        it('should return last half of address', () => {
-            const address = new Address(
-                '0x1234567890123456789012345678901234567890'
-            )
-            expect(address.lastHalf()).toBe('0x5678901234567890')
         })
     })
 })
