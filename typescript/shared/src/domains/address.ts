@@ -1,7 +1,6 @@
 import {isAddress} from 'viem'
+import {add0x} from '@1inch/byte-utils'
 import assert from 'node:assert'
-import {add0x} from '../utils/byte-utils'
-import {HASH_METHOD} from '../constants'
 
 /**
  * Address domain class (matching limit-order-sdk pattern)
@@ -49,9 +48,5 @@ export class Address {
 
     public lastHalf(): string {
         return add0x(this.val.slice(-20))
-    }
-
-    [HASH_METHOD](): string {
-        return this.val
     }
 }

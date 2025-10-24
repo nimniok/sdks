@@ -14,16 +14,6 @@ export class AquaProtocolContract {
      * Encodes the calldata for the ship function
      * @param args - Ship arguments containing app address, strategy, tokens, and amounts
      * @returns Encoded calldata as HexString
-     * @example
-     * ```typescript
-     * const args: ShipArgs = {
-     *   app: new Address('0x...'),
-     *   strategy: '0x1234...' as Hex,
-     *   tokens: [new Address('0x...')],
-     *   amounts: [BigInt(1000)]
-     * }
-     * const calldata = AquaProtocolContract.encodeShipCallData(args)
-     * ```
      * @see https://github.com/1inch/aqua-protocol/blob/master/src/Aqua.sol#L34
      */
     static encodeShipCallData(args: ShipArgs): HexString {
@@ -37,7 +27,7 @@ export class AquaProtocolContract {
                 strategy.toString(),
                 tokens.map((t) => t.toString()),
                 amounts
-            ] // todo: fix
+            ]
         })
 
         return new HexString(result)
@@ -62,15 +52,6 @@ export class AquaProtocolContract {
      * Encodes the calldata for the dock function
      * @param args - Dock arguments containing app address, strategy hash, and tokens
      * @returns Encoded calldata as HexString
-     * @example
-     * ```typescript
-     * const args: DockArgs = {
-     *   app: new Address('0x...'),
-     *   strategyHash: '0xabc...' as Hex,
-     *   tokens: [new Address('0x...')]
-     * }
-     * const calldata = AquaProtocolContract.encodeDockCallData(args)
-     * ```
      * @see https://github.com/1inch/aqua-protocol/blob/master/src/Aqua.sol#L49
      */
     static encodeDockCallData(args: DockArgs): HexString {
@@ -79,7 +60,11 @@ export class AquaProtocolContract {
         const [result] = encodeFunctionData({
             abi: AQUA_PROTOCOL_ABI,
             functionName: 'dock',
-            args: [app, strategyHash, tokens]
+            args: [
+                app.toString(),
+                strategyHash.toString(),
+                tokens.map((t) => t.toString())
+            ]
         })
 
         return new HexString(result)
@@ -89,17 +74,6 @@ export class AquaProtocolContract {
      * Encodes the calldata for the pull function
      * @param args - Pull arguments containing maker, strategy hash, token, amount, and recipient
      * @returns Encoded calldata as HexString
-     * @example
-     * ```typescript
-     * const args: PullArgs = {
-     *   maker: new Address('0x...'),
-     *   strategyHash: '0xabc...' as Hex,
-     *   token: new Address('0x...'),
-     *   amount: BigInt(1000),
-     *   to: new Address('0x...')
-     * }
-     * const calldata = AquaProtocolContract.encodePullCallData(args)
-     * ```
      * @see https://github.com/1inch/aqua-protocol/blob/master/src/Aqua.sol#L59
      */
     static encodePullCallData(args: PullArgs): HexString {
@@ -108,7 +82,13 @@ export class AquaProtocolContract {
         const [result] = encodeFunctionData({
             abi: AQUA_PROTOCOL_ABI,
             functionName: 'pull',
-            args: [maker, strategyHash, token, amount, to]
+            args: [
+                maker.toString(),
+                strategyHash.toString(),
+                token.toString(),
+                amount,
+                to.toString()
+            ]
         })
 
         return new HexString(result)
@@ -118,17 +98,6 @@ export class AquaProtocolContract {
      * Encodes the calldata for the push function
      * @param args - Push arguments containing maker, app, strategy hash, token, and amount
      * @returns Encoded calldata as HexString
-     * @example
-     * ```typescript
-     * const args: PushArgs = {
-     *   maker: new Address('0x...'),
-     *   app: new Address('0x...'),
-     *   strategyHash: '0xabc...' as Hex,
-     *   token: new Address('0x...'),
-     *   amount: BigInt(1000)
-     * }
-     * const calldata = AquaProtocolContract.encodePushCallData(args)
-     * ```
      * @see https://github.com/1inch/aqua-protocol/blob/master/src/Aqua.sol#L69
      */
     static encodePushCallData(args: PushArgs): HexString {
@@ -137,7 +106,13 @@ export class AquaProtocolContract {
         const [result] = encodeFunctionData({
             abi: AQUA_PROTOCOL_ABI,
             functionName: 'push',
-            args: [maker, app, strategyHash, token, amount]
+            args: [
+                maker.toString(),
+                app.toString(),
+                strategyHash.toString(),
+                token.toString(),
+                amount
+            ]
         })
 
         return new HexString(result)

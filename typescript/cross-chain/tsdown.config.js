@@ -16,7 +16,9 @@ export default defineConfig({
         }
     },
     unbundle: true,
-    dts: false,
+    dts: {
+        build: true
+    },
     outDir: './dist',
     format: ['cjs', 'esm']
 })

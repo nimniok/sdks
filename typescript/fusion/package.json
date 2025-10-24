@@ -21,7 +21,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsdown && tsc -p tsconfig.lib.json --emitDeclarationOnly",
+    "build": "rm -rf dist && tsdown",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",

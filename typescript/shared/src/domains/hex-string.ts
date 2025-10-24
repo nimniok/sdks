@@ -1,8 +1,7 @@
-import {trim0x} from '../utils/byte-utils'
+import {trim0x} from '@1inch/byte-utils'
 import {shouldBeString} from '../validators/should-be-string'
 import {shouldNotBeEmpty} from '../validators/should-not-be-empty'
 import {shouldBeHexString} from '../validators/should-be-hex-string'
-import {HASH_METHOD} from '../constants'
 
 export class HexString {
     private readonly hexString: string
@@ -40,10 +39,6 @@ export class HexString {
     }
 
     toJSON(): string {
-        return this.hexString
-    }
-
-    [HASH_METHOD](): string {
         return this.hexString
     }
 }
