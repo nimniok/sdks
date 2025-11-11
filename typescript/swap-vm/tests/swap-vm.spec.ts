@@ -322,7 +322,7 @@ describe('SwapVM', () => {
     await swapper.unlimitedApprove(swapVM.address.toString(), USDC.toString())
 
     class OnlyAllowedTakerArgs implements IArgsData {
-      constructor(public readonly allowedTaker: Address) { }
+      constructor(public readonly allowedTaker: Address) {}
 
       toJSON(): Record<string, unknown> | null {
         return { allowedTaker: this.allowedTaker.toString() }
