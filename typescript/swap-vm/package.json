@@ -1,6 +1,6 @@
 {
   "name": "@1inch/swap-vm-sdk",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "1inch Swap VM SDK",
   "author": "@1inch",
   "repository": {
