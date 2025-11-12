@@ -88,7 +88,7 @@
       }
     },
     "releaseTag": {
-      "pattern": "release/{projectName}/{version}"
+      "pattern": "{projectName}/{version}"
     },
     "git": {
       "commitMessage": "chore(release): {version}"
