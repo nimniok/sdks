@@ -86,18 +86,15 @@ pnpm lint:types
    - Choose version bump type (patch, minor, major, prerelease)
 
 2. **Automatic publishing:**
-   - The release workflow creates a version tag (e.g., `aqua-v1.0.0`)
+   - The release workflow creates a version tag (e.g., `aqua/v1.0.0`)
    - This triggers the publish workflow automatically
    - The SDK is published to public NPM registry
 
 ### Version Tags
 
 Each SDK has independent versioning with specific tag patterns:
-- `aqua-v*.*.*` - @1inch/aqua-sdk
-- `cross-chain-v*.*.*` - @1inch/cross-chain-sdk
-- `fusion-v*.*.*` - @1inch/fusion-sdk
-- `limit-order-v*.*.*` - @1inch/limit-order-sdk
-- `swap-vm-v*.*.*` - @1inch/swap-vm-sdk
+- `aqua/v*.*.*` - @1inch/aqua-sdk
+- `swap-vm/v*.*.*` - @1inch/swap-vm-sdk
 
 ## 🔧 Configuration
 

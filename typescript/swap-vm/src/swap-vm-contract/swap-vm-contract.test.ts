@@ -25,14 +25,11 @@ describe('SwapVMContract', () => {
         threshold: 1000000n,
       })
 
-      const signature = new HexString('0x1234567890abcdef')
-
       const callData = SwapVMContract.encodeSwapCallData({
         order,
         tokenIn: mockTokenIn,
         tokenOut: mockTokenOut,
         amount: 100000n,
-        signature,
         takerTraits,
       })
 
