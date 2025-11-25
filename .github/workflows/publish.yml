@@ -8,7 +8,19 @@ on:
       - 'fusion-v*.*.*'
       - 'limit-order-v*.*.*'
       - 'swap-vm-v*.*.*'
+  # Temp: triggers for testing new pipelines in PR: https://github.com/1inch/sdks/pull/23
+      - '*/v*.*.*'
   workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: Tag to publish (e.g. aqua/v1.2.3)
+        required: true
+      dry_run:
+        type: boolean
+        description: Dry run (preview publish commands)
+        required: false
+        default: false
 
 jobs:
   determine-sdk:
